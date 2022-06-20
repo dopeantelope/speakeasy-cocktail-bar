@@ -58,6 +58,7 @@ function ingredientsToArray(data, counter) {
 
 
 function ingredientsToDom(ingredients) {
+  document.querySelector('ul').innerText = ''
   for (let i = 0; i < ingredients.length; i++) {
     const ingItem = document.createElement('li')
     ingItem.innerText = ingredients[i]

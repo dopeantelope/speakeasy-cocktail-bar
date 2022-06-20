@@ -147,8 +147,9 @@ img{
 .cocktail-container {
   background:rgba(0, 0, 0, 0.7);
   color: white;
-  padding: 20px 20px;
-  height: 700px;
+  margin: 10rem 0;
+  padding: 20px 10px;
+  height: auto;
   width: 800px;
 }
 
@@ -244,7 +245,7 @@ img {
 
 .cocktail-display {
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
 }
 
 .cocktail-container h3 {
