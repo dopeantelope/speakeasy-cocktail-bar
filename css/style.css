@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  margin: 0;
+}
+
+body {
+  background: black;
+  margin: 0;
+}
+
+.bg-img {
+  height: 100vh;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://images.unsplash.com/photo-1504292989569-a2e9db962005?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2676&q=80");
+  background-size: cover;
+  margin-top: -10px;
+  top: 0;
+}
+
+.bar-background {
+  height: 100vh;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1597290282695-edc43d0e7129?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1775&q=80");
+  background-size: cover;
+  margin-top: -10px;
+  top: 0;
+  display: none;
+}
+
+.incorrect-password-animation {
+  animation: wiggle 1s linear;
+}
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-10deg);
+  }
+  20% {
+    transform: rotateZ(5deg);
+  }
+  25% {
+    transform: rotateZ(-5deg);
+  }
+  30% {
+    transform: rotateZ(3deg);
+  }
+  35% {
+    transform: rotateZ(-2deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.password-container {
+  display: none;
+  text-align: center;
+}
+
+.password-container > h1 {
+  font-size: 4.8rem;
+  color: white;
+  font-family: "Wire One";
+  letter-spacing: 2px;
+  font-weight: 100;
+  margin: 10px;
+}
+
+.password-input {
+  font-size: 4rem;
+  padding: 0 2rem;
+  font-family: "Wire One";
+  color: white;
+  letter-spacing: 2px;
+  background: transparent;
+  border: 1px solid white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.password-input:focus {
+  outline: none;
+}
+
+.enter-button {
+  border: 1px solid white;
+  background-color: transparent;
+  font-size: 4.8rem;
+  padding: 0 2rem;
+  font-family: "Wire One";
+  color: white;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+.enter-button:hover {
+  background:rgba(0, 0, 0, 0.45)
+}
+
+img{
+  display: block;
+  margin: 0 auto;
+}
+
+.speakeasy {
+  display: none;
+  gap: 2.4rem;
+  align-items: center;
+}
+
+.speakeasy h1 {
+  font-size: 4rem;
+  font-family: 'josefin slab';
+  margin-bottom: 20px;
+  margin-left: 1rem;
+  margin-top: 2rem;
+}
+
+#browse {
+  font-size: 2.8rem;
+  margin: 1rem;
+}
+
+.welcome {
+  background:rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 20px;
+  height: 500px;
+  width: 400px;
+}
+
+.cocktail-container {
+  background:rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px 20px;
+  height: 700px;
+  width: 800px;
+}
+
+p {
+  font-family: 'josefin sans';
+  font-size: 2rem;
+  line-height: 2.8rem;
+  display: inline-block;
+  margin: 10px;
+}
+
+
+li {
+  font-family: 'josefin sans';
+  font-size: 2rem;
+  line-height: 2.8rem;
+  margin: 10px;
+}
+
+span {
+  font-family: 'babylonica';
+  font-size: 4.8rem;
+  margin: 10px;
+  margin-top: 10px;
+}
+
+.cocktail-container > h1 {
+  font-size: 4rem;
+  font-family: 'josefin slab';
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+img {
+  width: 300px;
+  height: auto;
+  margin-top: 2rem;
+  margin-right: 1rem;
+}
+
+#search-cocktail {
+  margin: 1rem;
+  font-size: 2rem;
+  font-family: 'josefin sans';
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 1rem;
+  width: 40rem;
+}
+
+#search-cocktail:focus {
+  outline: none;
+}
+
+#search-cocktail-button {
+  background: transparent;
+  color: white;
+  font-size: 2rem;
+  font-family: 'josefin sans';
+  border: 1px solid white;
+  padding: 1rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+#search-cocktail-button:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.next-cocktail {
+  background: transparent;
+  color: white;
+  font-size: 2rem;
+  font-family: 'josefin sans';
+  border: 1px solid white;
+  padding: 1rem;
+  cursor: pointer;
+  margin: 2rem 0;
+  display: none;
+}
+.next-cocktail:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.cocktail-container h2 {
+  font-size: 2.8rem;
+  font-family: 'josefin slab';
+  letter-spacing: 2px;
+  font-weight: 100;
+  margin: 1rem;
+}
+
+.cocktail-display {
+  display: flex;
+  gap: 1rem;
+}
+
+.cocktail-container h3 {
+  color: white;
+  font-size: 2rem;
+  font-family: 'josefin sans';
+  margin: 1rem;
+}
