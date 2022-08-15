@@ -1,7 +1,9 @@
 //The user will enter a cocktail. Get a cocktail name, photo, and instructions and place them in the DOM
 
+// event listeners for when buttons are clicked
 document.querySelector('.enter-button').addEventListener('click', enter)
 document.querySelector('#search-cocktail-button').addEventListener('click', searchCocktail)
+document.querySelector('.next-cocktail').addEventListener('click', searchCocktail)
 
 
 document.addEventListener('keyup', (e) => {
@@ -15,7 +17,6 @@ document.addEventListener('keyup', (e) => {
 });
 
 function searchCocktail() {
-  // these variables will depend on your implementation
   const cocktail = document.querySelector('#search-cocktail').value;
   const URL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;
 
@@ -30,25 +31,26 @@ function searchCocktail() {
   })
 }
 
-let counter = 0
+let index = 0
 function drinkCarousel(data) {
-  if (counter <= data.drinks.length - 1) {
+  console.log(data)
+  if (index <= data.drinks.length - 1) {
     document.querySelector('.next-cocktail').style.display = 'block'
-    document.querySelector('h2').innerText = data.drinks[counter].strDrink
-    document.querySelector('img').src = data.drinks[counter].strDrinkThumb
-    document.querySelector('.ingredients').innerText = data.drinks[counter].strInstructions
-    ingredientsToArray(data, counter)
-    counter++
+    document.querySelector('.prev-cocktail').style.display = 'block'
+    document.querySelector('h2').innerText = data.drinks[index].strDrink
+    document.querySelector('img').src = data.drinks[index].strDrinkThumb
+    document.querySelector('.ingredients').innerText = data.drinks[index].strInstructions
+    ingredientsToArray(data, index)
+    index++
  } else {
-    console.log('hiiiiii')
-    counter = 0
+    index = 0
     drinkCarousel()
 }
 }
 
-function ingredientsToArray(data, counter) {
+function ingredientsToArray(data, index) {
   const ingredients = []
-  for (const [key, value] of Object.entries(data.drinks[counter])){
+  for (const [key, value] of Object.entries(data.drinks[index])){
     if (key.includes("strIngredient") && value){
       ingredients.push(value)
   }

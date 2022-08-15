@@ -220,7 +220,7 @@ img {
   background: rgba(0, 0, 0, 0.4);
 }
 
-.next-cocktail {
+.next-cocktail, .prev-cocktail {
   background: transparent;
   color: white;
   font-size: 2rem;
