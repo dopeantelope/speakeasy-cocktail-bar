@@ -118,6 +118,7 @@ img{
   display: none;
   gap: 2.4rem;
   align-items: center;
+  width: 80%;
 }
 
 .speakeasy h1 {
@@ -140,17 +141,16 @@ img{
   flex-direction: column;
   justify-content: center;
   padding: 20px 20px;
-  height: 500px;
-  width: 400px;
+  height: 30%;
+  width: 50%;
 }
 
 .cocktail-container {
   background:rgba(0, 0, 0, 0.7);
   color: white;
-  margin: 10rem 0;
   padding: 20px 10px;
-  height: auto;
-  width: 800px;
+  height: 90%;
+  width: 90%;
 }
 
 p {
@@ -262,3 +262,20 @@ img {
   gap: 20px;
 }
 
+@media all and (max-width: 1267px) {
+  .speakeasy {
+    width: 100%;
+  }
+
+  #search-cocktail {
+    width: 30rem;
+  }
+
+  #search-cocktail-button {
+    padding: 1rem 2rem;
+  }
+
+  img {
+    width: 300px;
+  }
+}

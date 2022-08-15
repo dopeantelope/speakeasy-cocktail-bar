@@ -35,7 +35,7 @@ async function searchCocktail() {
 
 let index = 0
 function displayCocktail(drinks, index) {
-  console.log(drinks)
+  console.log(index)
   if (index <= drinks.length - 1) {
     document.querySelector('.next-cocktail').style.display = 'block'
     document.querySelector('h2').innerText = drinks[index].strDrink
@@ -45,7 +45,7 @@ function displayCocktail(drinks, index) {
     index++
  } else {
     index = 0
-    displayCocktail()
+    displayCocktail(drinksArray, index)
 }
 }
 
