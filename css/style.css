@@ -203,6 +203,7 @@ img {
 
 #search-cocktail:focus {
   outline: none;
+  box-shadow: 0 0 15px white;
 }
 
 #search-cocktail-button {
@@ -211,7 +212,7 @@ img {
   font-size: 2rem;
   font-family: 'josefin sans';
   border: 1px solid white;
-  padding: 1rem;
+  padding: 1rem 4rem;
   cursor: pointer;
   margin-bottom: 2rem;
 }
@@ -226,12 +227,12 @@ img {
   font-size: 2rem;
   font-family: 'josefin sans';
   border: 1px solid white;
-  padding: 1rem;
+  padding: 1rem 4rem;
   cursor: pointer;
   margin: 2rem 0;
   display: none;
 }
-.next-cocktail:hover {
+.next-cocktail:hover, .prev-cocktail:hover {
   background: rgba(0, 0, 0, 0.4);
 }
 
@@ -254,3 +255,10 @@ img {
   font-family: 'josefin sans';
   margin: 1rem;
 }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
