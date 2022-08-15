@@ -3,7 +3,8 @@
 // event listeners for when buttons are clicked
 document.querySelector('.enter-button').addEventListener('click', enter)
 document.querySelector('#search-cocktail-button').addEventListener('click', searchCocktail)
-document.querySelector('.next-cocktail').addEventListener('click', searchCocktail)
+document.querySelector('.next-cocktail').addEventListener('click', nextCocktail)
+document.querySelector('.prev-cocktail').addEventListener('click', prevCocktail)
 
 
 document.addEventListener('keyup', (e) => {
@@ -16,41 +17,52 @@ document.addEventListener('keyup', (e) => {
   }
 });
 
-function searchCocktail() {
+let drinksArray;
+async function searchCocktail() {
   const cocktail = document.querySelector('#search-cocktail').value;
   const URL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;
 
-  fetch(URL)
+  await fetch(URL)
   .then(res => res.json())
   .then(data => {
-    drinkCarousel(data)
+    drinksArray = data.drinks
+    displayCocktail(drinksArray, 0)
   })
-
   .catch(err => {
   console.log(`error ${err}`)
   })
 }
 
 let index = 0
-function drinkCarousel(data) {
-  console.log(data)
-  if (index <= data.drinks.length - 1) {
+function displayCocktail(drinks, index) {
+  console.log(drinks)
+  if (index <= drinks.length - 1) {
     document.querySelector('.next-cocktail').style.display = 'block'
-    document.querySelector('.prev-cocktail').style.display = 'block'
-    document.querySelector('h2').innerText = data.drinks[index].strDrink
-    document.querySelector('img').src = data.drinks[index].strDrinkThumb
-    document.querySelector('.ingredients').innerText = data.drinks[index].strInstructions
-    ingredientsToArray(data, index)
+    document.querySelector('h2').innerText = drinks[index].strDrink
+    document.querySelector('img').src = drinks[index].strDrinkThumb
+    document.querySelector('.ingredients').innerText = drinks[index].strInstructions
+    ingredientsToArray(drinks, index)
     index++
  } else {
     index = 0
-    drinkCarousel()
+    displayCocktail()
 }
 }
 
-function ingredientsToArray(data, index) {
+function nextCocktail() {
+  document.querySelector('.prev-cocktail').style.display = 'block'
+  index++
+  displayCocktail(drinksArray, index)
+}
+
+function prevCocktail() {
+  index--
+  displayCocktail(drinksArray, index)
+}
+
+function ingredientsToArray(drinks, index) {
   const ingredients = []
-  for (const [key, value] of Object.entries(data.drinks[index])){
+  for (const [key, value] of Object.entries(drinks[index])){
     if (key.includes("strIngredient") && value){
       ingredients.push(value)
   }
