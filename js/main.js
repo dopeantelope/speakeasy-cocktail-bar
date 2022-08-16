@@ -6,7 +6,7 @@ document.querySelector('#search-cocktail-button').addEventListener('click', sear
 document.querySelector('.next-cocktail').addEventListener('click', nextCocktail)
 document.querySelector('.prev-cocktail').addEventListener('click', prevCocktail)
 
-
+// enter button event listener
 document.addEventListener('keyup', (e) => {
   if (!document.getElementById('search-cocktail').value == '') {
     let pressedKey = String(e.key)
@@ -17,14 +17,29 @@ document.addEventListener('keyup', (e) => {
   }
 });
 
+if (window.innerWidth < 1327 && !document.querySelector('#search-cocktail').value) {
+  let w = document.querySelector('.center-bar')
+  w.style.top = 'min(100vh - 350px, 100vh)'
+  console.log(w)
+}
+
+
+// api call
 let drinksArray;
 async function searchCocktail() {
   const cocktail = document.querySelector('#search-cocktail').value;
-  const URL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`;
+  const URL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktail}`
 
   await fetch(URL)
   .then(res => res.json())
   .then(data => {
+    if (cocktail && window.innerWidth < 1327 && window.innerWidth > 704) {
+      document.querySelector('.center-bar').style.top = 'min(100vh - 150px, 100vh)'
+      document.getElementById("location").scrollIntoView({behavior: 'smooth'});
+    } else if (cocktail && window.innerWidth < 704) {
+        document.querySelector('.center-bar').style.setProperty("top", "min(100vh + 100px, 100vh)", "important")
+        console.log('gucci')
+    }
     drinksArray = data.drinks
     displayCocktail(drinksArray, 0)
   })
@@ -33,6 +48,7 @@ async function searchCocktail() {
   })
 }
 
+// cocktail display information
 let index = 0
 function displayCocktail(drinks, index) {
   console.log(drinksArray)

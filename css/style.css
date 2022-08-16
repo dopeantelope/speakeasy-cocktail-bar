@@ -10,6 +10,7 @@ html {
 body {
   background: black;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 .bg-img {
@@ -59,11 +60,15 @@ body {
   }
 }
 
-.center {
-  position: fixed;
-  top: 50%;
+.center, .center-bar {
+  position: absolute;
+  top: min(100vh - 100px, 50vh);
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.center-bar {
+  display: none;
 }
 
 .password-container {
@@ -114,6 +119,10 @@ body {
 img{
   display: block;
   margin: 0 auto;
+  width: 300px;
+  height: auto;
+  margin-top: 2rem;
+  margin-right: 1rem;
 }
 
 .speakeasy {
@@ -186,21 +195,14 @@ span {
   font-weight: 100;
 }
 
-img {
-  width: 300px;
-  height: auto;
-  margin-top: 2rem;
-  margin-right: 1rem;
-}
-
 #search-cocktail {
-  margin: 1rem;
   font-size: 2rem;
   font-family: 'josefin sans';
   background: transparent;
   border: 1px solid white;
   color: white;
   padding: 1rem;
+  margin: 10px;
   width: 40rem;
 }
 
@@ -265,6 +267,11 @@ img {
   gap: 20px;
 }
 
+.title-descrip {
+  display: flex;
+  flex-direction: column;
+}
+
 ::-webkit-scrollbar {
   width: 20px;
 }
@@ -277,9 +284,37 @@ img {
   outline: 1px solid white;
 }
 
-@media all and (max-width: 1267px) {
+@media all and (max-width: 1327px) {
   .speakeasy {
-    width: 100%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  .cocktail-container {
+    width: 95%;
+    overflow-y: hidden;
+    max-height: fit-content;
+  }
+
+  .cocktail-display {
+    height: 100%;
+    margin-top: 20px;
+  }
+
+  .cocktail-container h2 {
+    font-size: 4.6rem;
+  }
+
+  .center-bar {
+    display: none;
+    top: min(100vh - 150px, 100vh);
+  }
+
+  .welcome {
+    height: 400px;
+    width: 95%;
   }
 
   #search-cocktail {
@@ -291,6 +326,62 @@ img {
   }
 
   img {
-    width: 300px;
+    width: 400px;
+  }
+}
+
+@media all and (max-width: 877px) {
+  
+  .center-bar {
+  top: min(100vh - 50px, 100vh)
+  }
+
+}
+
+
+@media all and (max-width: 704px) {
+  .cocktail-display {
+    flex-wrap: wrap;
+    height: 100%;
+  }
+
+  .center-bar {
+    top: min(100vh + 100px, 100vh) !important;
+    margin-top: 50px;
+    }
+
+}
+
+@media all and (max-width: 704px) {
+  .center-bar {
+    top: min(100vh - 350px, 100vh) !important;
+    margin-top: 150px;
+  }
+
+  .welcome {
+    height: 500px;
+  }
+
+  #search-cocktail {
+    width: 95%;
+  }
+
+  #search-cocktail-button{
+    width: 95%;
+    margin: 10px;
+  }
+
+  .prev-cocktail, .next-cocktail {
+    width: 45%;
+  }
+
+  img {
+    margin: 0 auto;
+  }
+}
+
+@media all and (min-width: 1327px) {
+  #center-bar {
+    top: 50% !important
   }
 }
