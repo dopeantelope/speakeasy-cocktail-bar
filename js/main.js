@@ -35,29 +35,38 @@ async function searchCocktail() {
 
 let index = 0
 function displayCocktail(drinks, index) {
+  console.log(drinksArray)
+  document.querySelector('.next-cocktail').style.display = 'block'
+  document.querySelector('h2').innerText = drinks[index].strDrink
+  document.querySelector('img').src = drinks[index].strDrinkThumb
+  document.querySelector('.ingredients').innerText = drinks[index].strInstructions
+  ingredientsToArray(drinks, index)
+}
+
+function nextCocktail() {
   console.log(index)
-  if (index <= drinks.length - 1) {
-    document.querySelector('.next-cocktail').style.display = 'block'
-    document.querySelector('h2').innerText = drinks[index].strDrink
-    document.querySelector('img').src = drinks[index].strDrinkThumb
-    document.querySelector('.ingredients').innerText = drinks[index].strInstructions
-    ingredientsToArray(drinks, index)
+  if (drinksArray.length > 1) {
+    document.querySelector('.prev-cocktail').style.display = 'block'
+  }
+  if (index < drinksArray.length - 1) {
     index++
- } else {
+    console.log(`index: ${index} length: ${drinksArray.length}`)
+    displayCocktail(drinksArray, index)
+    console.log('hello')
+  } else {
     index = 0
     displayCocktail(drinksArray, index)
 }
 }
 
-function nextCocktail() {
-  document.querySelector('.prev-cocktail').style.display = 'block'
-  index++
-  displayCocktail(drinksArray, index)
-}
-
 function prevCocktail() {
-  index--
-  displayCocktail(drinksArray, index)
+  if (index == 0) {
+    index = drinksArray.length - 1
+    displayCocktail(drinksArray, index)
+  } else {
+    index--
+    displayCocktail(drinksArray, index)
+  }
 }
 
 function ingredientsToArray(drinks, index) {
