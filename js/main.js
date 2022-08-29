@@ -17,13 +17,6 @@ document.addEventListener('keyup', (e) => {
   }
 });
 
-if (window.innerWidth < 1327 && !document.querySelector('#search-cocktail').value) {
-  let w = document.querySelector('.center-bar')
-  w.style.top = 'min(100vh - 350px, 100vh)'
-  console.log(w)
-}
-
-
 // api call
 let drinksArray;
 async function searchCocktail() {
@@ -33,13 +26,6 @@ async function searchCocktail() {
   await fetch(URL)
   .then(res => res.json())
   .then(data => {
-    if (cocktail && window.innerWidth < 1327 && window.innerWidth > 704) {
-      document.querySelector('.center-bar').style.top = 'min(100vh - 150px, 100vh)'
-      document.getElementById("location").scrollIntoView({behavior: 'smooth'});
-    } else if (cocktail && window.innerWidth < 704) {
-        document.querySelector('.center-bar').style.setProperty("top", "min(100vh + 100px, 100vh)", "important")
-        console.log('gucci')
-    }
     drinksArray = data.drinks
     displayCocktail(drinksArray, 0)
   })
@@ -119,9 +105,9 @@ document.addEventListener('keyup', (e) => {
   if (pressedKey === "Enter") {
     if (password === ' ') {
       document.querySelector('.password-container').style.display = 'none'
-      document.querySelector('.bg-img').style.display = 'none'
-      document.querySelector('.speakeasy').style.display = 'flex'
-      document.querySelector('.bar-background').style.display = 'block'
+      document.querySelector('.display-enter').style.display = 'none'
+      document.querySelector('.display').style.display = 'flex'
+      document.querySelector('body').style.backgroundImage = 'radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1597290282695-edc43d0e7129?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1775&q=80")'
       document.querySelector('#search-cocktail').focus()
       return;
     } else {

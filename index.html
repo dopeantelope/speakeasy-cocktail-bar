@@ -6,7 +6,7 @@
     	<meta name="description" content="This is where your description goes">
     	<meta name="keywords" content="one, two, three">
 
-		<title>Cocktails</title>
+		<title>Speakeasy</title>
 
 		<!-- external CSS link -->
 		<link rel="icon" href="/img/martini.png" type="image/x-icon">
@@ -18,51 +18,54 @@
 		<script src="https://unpkg.com/phosphor-icons"></script>
 	</head> 
 	<body>
-		<div class="bg-img"></div>
-		<div class="bar-background"></div>
 
+		<div class="display-enter">
 			<section class="enter center">
 				<button class="enter-button">ENTER</button>
 			</section>
 
 			<section class="password-container center">
 				<h1>PASSWORD</h1>
-				<input type="password" class="password-input" id="password-input"/>
+				<input type="password" class="password-input" 	id="password-input"/>
 			</section>
+		</div>
 		
+
+		<div class="display">
 			<section class="speakeasy center-bar" id="center-bar">
-				<section class="welcome">
-					<h1>Welcome to the Search Bar</h1>
-					<p>The Search Bar is a speakeasy for the most elite developers. With no bartenders here it is up to you to build your own cocktails! We will provide you with ingredients and instructions.</p>
-					<p>Please browse the cocktail carousel and then place your order.</p>
-					<p>Thanks for stopping by!</p>
-					<span>Search Bar</span>
-				</section>
+			<section class="welcome" id="welcome">
+				<h1>Welcome to the Search Bar</h1>
+				<p>The Search Bar is a speakeasy for the most elite developers. With no bartenders here it is up to you to build your own cocktails! We will provide you with ingredients and instructions.</p>
+				<p>Please browse the cocktails.</p>
+				<p>Thanks for stopping by!</p>
+				<span>Search Bar</span>
+			</section>
 
-				<section class="cocktail-container">
-					<h1 id="browse">Browse Cocktails</h1>
-					<p>Browse our cocktails by entering a key word e.g) sour</p>
-					<input type="text" name="" value="" id="search-cocktail">
-					<button type="button" name="button" id="search-cocktail-button">Get Cocktail</button>
+			<section class="cocktail-container">
+				<h1 id="browse">Browse Cocktails</h1>
+				<p>Browse our cocktails by entering a key word e.g) sour</p>
+				<input type="text" name="" value="" id="search-cocktail">
+				<button type="button" name="button" id="search-cocktail-button">Get Cocktail</button>
 
-					<section class="cocktail-display">
-						<div class="title-descrip">
-							<h2></h2>
-							<section class="details">
-								<ul></ul>
-								<p class="ingredients"></p>
-							</section>
-						</div>
-						<section class="cocktail-image">
-							<img src="" alt="">
-							<div class="button-container">
-								<button class="prev-cocktail">Prev</button>
-								<button class="next-cocktail"id="location">Next</button>
-							</div>
+				<section class="cocktail-display">
+					<div class="title-descrip">
+						<h2></h2>
+						<section class="details">
+							<ul></ul>
+							<p class="ingredients"></p>
 						</section>
+					</div>
+					<section class="cocktail-image">
+						<img src="" alt="">
+						<div class="button-container">
+							<button class="prev-cocktail">Prev</button>
+							<button class="next-cocktail"id="location">Next</button>
+						</div>
 					</section>
 				</section>
 			</section>
-		<script type="text/javascript" src="js/main.js"></script>
-	</body>
+			</section>
+		</div>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
 </html>
