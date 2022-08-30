@@ -3,7 +3,7 @@ A Speakeasy Cocktail bar that requires a password to enter. Upon entering, user 
 
 **Link to project:** https://twitter.com/rexxlifebot
 
-![Alt Text](https://i.ibb.co/LPsKbPz/Screenshot-2022-08-30-at-10-48-21.png)
+![Alt Text](https://i.ibb.co/hHCH3gr/Screenshot-2022-08-30-at-11-10-15.png)
 
 ## How It's Made:
 
