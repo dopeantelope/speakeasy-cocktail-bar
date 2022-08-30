@@ -1,9 +1,9 @@
 # Speakeasy Cocktail Bar
-A Speakeasy Cocktail bar that requires a password to enter. Upon entering, user can enter an alcohol and browse through the cocktail menu.
+A Speakeasy Cocktail bar that requires a password to enter. Upon entering, user can enter a key word and browse through the cocktail menu.
 
 **Link to project:** https://twitter.com/rexxlifebot
 
-![Alt Text](https://i.ibb.co/VDs5rvK/Screenshot-2022-08-09-at-18-56-03.png)
+![Alt Text](https://i.ibb.co/LPsKbPz/Screenshot-2022-08-30-at-10-48-21.png)
 
 ## How It's Made:
 
