@@ -184,6 +184,10 @@ span {
   margin-top: 10px;
 }
 
+.error {
+  display: none;
+}
+
 .cocktail-container > h1 {
   font-size: 4rem;
   font-family: 'josefin slab';
@@ -345,7 +349,7 @@ span {
   }
 
   .welcome {
-    height: 500px;
+    height: fit-content;
   }
 
   #search-cocktail {
@@ -370,4 +374,15 @@ span {
     margin: 0 auto;
     width: 75%;
   }
+}
+
+@media all and (max-width: 348px) {
+  .speakeasy {
+    margin-top: 4rem;
+  }
+
+  .welcome {
+    padding-top: 2rem;
+  }
+
 }

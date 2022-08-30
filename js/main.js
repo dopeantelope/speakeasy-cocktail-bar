@@ -27,34 +27,41 @@ async function searchCocktail() {
   .then(res => res.json())
   .then(data => {
     drinksArray = data.drinks
+    console.log(drinksArray)
     displayCocktail(drinksArray, 0)
   })
   .catch(err => {
-  console.log(`error ${err}`)
+    console.log("unable to find drink")
   })
 }
 
 // cocktail display information
 let index = 0
 function displayCocktail(drinks, index) {
-  console.log(drinksArray)
-  document.querySelector('.next-cocktail').style.display = 'block'
-  document.querySelector('h2').innerText = drinks[index].strDrink
-  document.querySelector('img').src = drinks[index].strDrinkThumb
-  document.querySelector('.ingredients').innerText = drinks[index].strInstructions
-  ingredientsToArray(drinks, index)
+  if (drinks === null) {
+    document.querySelector('.cocktail-display').style.display = "none"
+    document.querySelector('.error').style.display = "block"
+  } else {
+    document.querySelector('.cocktail-display').scrollIntoView({
+      behavior: "smooth",
+    });
+    document.querySelector('.cocktail-display').style.display = "flex"
+    document.querySelector('.error').style.display = "none"
+    document.querySelector('.next-cocktail').style.display = 'block'
+    document.querySelector('h2').innerText = drinks[index].strDrink
+    document.querySelector('img').src = drinks[index].strDrinkThumb
+    document.querySelector('.ingredients').innerText = drinks[index].strInstructions
+    ingredientsToArray(drinks, index)
+  }
 }
 
 function nextCocktail() {
-  console.log(index)
   if (drinksArray.length > 1) {
     document.querySelector('.prev-cocktail').style.display = 'block'
   }
   if (index < drinksArray.length - 1) {
     index++
-    console.log(`index: ${index} length: ${drinksArray.length}`)
     displayCocktail(drinksArray, index)
-    console.log('hello')
   } else {
     index = 0
     displayCocktail(drinksArray, index)
@@ -103,7 +110,7 @@ document.addEventListener('keyup', (e) => {
   let count = 0;
   let pressedKey = String(e.key);
   if (pressedKey === "Enter") {
-    if (password === ' ') {
+    if (password === 'leon sent me') {
       document.querySelector('.password-container').style.display = 'none'
       document.querySelector('.display-enter').style.display = 'none'
       document.querySelector('.display').style.display = 'flex'
