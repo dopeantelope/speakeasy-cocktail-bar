@@ -1,7 +1,7 @@
 # Speakeasy Cocktail Bar
 A Speakeasy Cocktail bar that requires a password to enter. Upon entering, user can enter a key word and browse through the cocktail menu.
 
-**Link to project:** https://twitter.com/rexxlifebot
+**Link to project:** https://speakeasy-bar.netlify.app/
 
 ![Alt Text](https://i.ibb.co/hHCH3gr/Screenshot-2022-08-30-at-11-10-15.png)
 
