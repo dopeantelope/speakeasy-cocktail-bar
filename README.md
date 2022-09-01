@@ -3,7 +3,7 @@ A Speakeasy Cocktail bar that requires a password to enter. Upon entering, user 
 
 **Link to project:** https://speakeasy-bar.netlify.app/
 
-![Alt Text](https://i.ibb.co/hHCH3gr/Screenshot-2022-08-30-at-11-10-15.png)
+![Alt Text](https://i.ibb.co/qN58Jp0/Screenshot-2022-08-30-at-11-10-15-1.png)
 
 ## How It's Made:
 
