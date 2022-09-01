@@ -38,14 +38,15 @@ async function searchCocktail() {
 // cocktail display information
 let index = 0
 function displayCocktail(drinks, index) {
+  document.querySelector('.cocktail-container').style.display = 'flex'
   if (drinks === null) {
     document.getElementById('cocktail-name').focus()
     document.querySelector('.cocktail-display').style.display = "none"
     document.querySelector('.error').style.display = "block"
   } else {
     document.querySelector('.cocktail-display').style.display = "flex";
-    location.href = "#";
-    location.href = "#cocktail-name";
+    location.href = '#'
+    location.href = '#cocktail-display'
     document.querySelector('.error').style.display = "none"
     document.querySelector('.next-cocktail').style.display = 'block'
     document.querySelector('h2').innerText = drinks[index].strDrink
@@ -110,7 +111,7 @@ document.addEventListener('keyup', (e) => {
   let count = 0;
   let pressedKey = String(e.key);
   if (pressedKey === "Enter") {
-    if (password === 'leon sent me') {
+    if (password === ' ') {
       document.querySelector("input").blur()
       window.scrollTo(0, 0)
       document.querySelector('.password-container').style.display = 'none'

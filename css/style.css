@@ -122,6 +122,10 @@ img{
   display: none;
 }
 
+.styling-cocktail {
+  width: 1100px;
+}
+
 .speakeasy {
   display: flex;
   justify-content: center;
@@ -155,11 +159,20 @@ img{
 
 .cocktail-container {
   background:rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
   color: white;
   padding: 20px 10px;
-  max-height: 700px;
-  width: 90%;
+  max-height: 450px;
+  width: 100%;
   overflow-y: scroll;
+  display: none;
+}
+
+.browse-container {
+  background:rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px 10px;
 }
 
 p {
@@ -291,6 +304,13 @@ span {
     margin-bottom: 4rem;
   }
 
+  .styling-cocktail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .speakeasy {
     width: 95%;
     display: flex;
@@ -303,11 +323,19 @@ span {
     width: 95%;
     overflow: hidden;
     max-height:none;
-    height: 100%;
+    height: fit-content;
+  }
+
+  .browse-container {
+    width: 95%;
+    overflow: hidden;
+    height:fit-content;
+    padding: 20px 20px;
+    margin-bottom: 2rem;
   }
 
   .cocktail-display {
-    height: 100%;
+    height: fit-content;
     margin-top: 20px;
   }
 
@@ -338,7 +366,7 @@ span {
 @media all and (max-width: 704px) {
   .cocktail-display {
     flex-wrap: wrap;
-    height: 100%;
+    height: fit-content;
   }
 
 }
@@ -360,6 +388,7 @@ span {
   .cocktail-display {
     flex-direction: column;
     justify-content: flex-start;
+    height: fit-content;
   }
 
   #search-cocktail-button{
@@ -373,9 +402,17 @@ span {
 
   img {
     margin: 0 auto;
-    width: 75%;
+    width: 60%;
   }
 }
+
+
+@media all and (max-width: 500px) {
+  img {
+    width: 100%;
+  }
+}
+
 
 @media all and (max-width: 348px) {
   .speakeasy {
@@ -385,5 +422,4 @@ span {
   .welcome {
     padding-top: 2rem;
   }
-
 }
