@@ -39,13 +39,13 @@ async function searchCocktail() {
 let index = 0
 function displayCocktail(drinks, index) {
   if (drinks === null) {
+    document.getElementById('cocktail-name').focus()
     document.querySelector('.cocktail-display').style.display = "none"
     document.querySelector('.error').style.display = "block"
   } else {
-    document.querySelector('.cocktail-display').scrollIntoView({
-      behavior: "smooth",
-    });
-    document.querySelector('.cocktail-display').style.display = "flex"
+    document.querySelector('.cocktail-display').style.display = "flex";
+    location.href = "#";
+    location.href = "#cocktail-name";
     document.querySelector('.error').style.display = "none"
     document.querySelector('.next-cocktail').style.display = 'block'
     document.querySelector('h2').innerText = drinks[index].strDrink
@@ -83,8 +83,8 @@ function ingredientsToArray(drinks, index) {
   for (const [key, value] of Object.entries(drinks[index])){
     if (key.includes("strIngredient") && value){
       ingredients.push(value)
+    }
   }
-}
   ingredientsToDom(ingredients)
 }
 
@@ -111,11 +111,12 @@ document.addEventListener('keyup', (e) => {
   let pressedKey = String(e.key);
   if (pressedKey === "Enter") {
     if (password === 'leon sent me') {
+      document.querySelector("input").blur()
+      window.scrollTo(0, 0)
       document.querySelector('.password-container').style.display = 'none'
       document.querySelector('.display-enter').style.display = 'none'
       document.querySelector('.display').style.display = 'flex'
       document.querySelector('body').style.backgroundImage = 'radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1597290282695-edc43d0e7129?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1775&q=80")'
-      document.querySelector('#search-cocktail').focus()
       return;
     } else {
       document.getElementById('password-input').classList.add("incorrect-password-animation")
@@ -125,12 +126,9 @@ document.addEventListener('keyup', (e) => {
     }
   }
   let delay = 1;
-      setTimeout(() => {
-        document.querySelector("#password-input").classList.remove("incorrect-password-animation")
-      }, delay)
-  if (count === 5) {
-    console.log('bruh...')
-  }
+  setTimeout(() => {
+    document.querySelector("#password-input").classList.remove("incorrect-password-animation")
+  }, delay)
 })
 
 

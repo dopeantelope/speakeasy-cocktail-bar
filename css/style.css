@@ -55,6 +55,7 @@ body {
 .password-container {
   display: none;
   text-align: center;
+  font-size: 2.4rem;
 }
 
 .password-container > h1 {
