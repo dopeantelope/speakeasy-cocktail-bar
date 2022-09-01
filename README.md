@@ -12,7 +12,7 @@ A web application that calls a cocktail API using an asynchronous fetch function
 
 ## Optimizations
 
-Further optimizations include searching for cocktails by their ingredients
+Further optimizations include searching for cocktails by their ingredients. Using local storage to enable users to save a list of their favorite cocktails. 
 
 
 ## Lessons Learned:
