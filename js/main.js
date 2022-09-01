@@ -45,8 +45,7 @@ function displayCocktail(drinks, index) {
     document.querySelector('.error').style.display = "block"
   } else {
     document.querySelector('.cocktail-display').style.display = "flex";
-    location.href = '#'
-    location.href = '#cocktail-display'
+    document.querySelector('#cocktail-display').scrollIntoView()
     document.querySelector('.error').style.display = "none"
     document.querySelector('.next-cocktail').style.display = 'block'
     document.querySelector('h2').innerText = drinks[index].strDrink
