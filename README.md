@@ -17,7 +17,7 @@ Further optimizations include searching for cocktails by their ingredients
 
 ## Lessons Learned:
 
-- [x] Further understanding of object manipulation through API responses.
+- [x] Further understanding of object manipulation through API responses
 - [x] JavaScript window.scrollTo method
-- [x] Learnt more about asynchronous functions and their benefits.
+- [x] Learnt more about asynchronous functions and their benefits
 - [x] Learnt how to make a Tequila Sunrise
