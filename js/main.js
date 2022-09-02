@@ -27,7 +27,6 @@ async function searchCocktail() {
   .then(res => res.json())
   .then(data => {
     drinksArray = data.drinks
-    console.log(drinksArray)
     displayCocktail(drinksArray, 0)
   })
   .catch(err => {
@@ -35,7 +34,7 @@ async function searchCocktail() {
   })
 }
 
-// cocktail display information
+// display cocktail information
 let index = 0
 function displayCocktail(drinks, index) {
   document.querySelector('.cocktail-container').style.display = 'flex'
@@ -45,7 +44,7 @@ function displayCocktail(drinks, index) {
     document.querySelector('.error').style.display = "block"
   } else {
     document.querySelector('.cocktail-display').style.display = "flex";
-    document.querySelector('#cocktail-display').scrollIntoView()
+    document.querySelector('#cocktail-display').scrollIntoView(true)
     document.querySelector('.error').style.display = "none"
     document.querySelector('.next-cocktail').style.display = 'block'
     document.querySelector('h2').innerText = drinks[index].strDrink
@@ -55,7 +54,10 @@ function displayCocktail(drinks, index) {
   }
 }
 
+
+// next button functionality to get the next cocktail in the drinksArray
 function nextCocktail() {
+  // if drinksArray length is > than 1 then display the previous button
   if (drinksArray.length > 1) {
     document.querySelector('.prev-cocktail').style.display = 'block'
   }
@@ -68,16 +70,22 @@ function nextCocktail() {
 }
 }
 
+// previous button functionality to get the next cocktail in the drinksArray
 function prevCocktail() {
+  // if index is 0 then index reassigned to last index number so user can cycle through the drinksArray backwards.
   if (index == 0) {
     index = drinksArray.length - 1
     displayCocktail(drinksArray, index)
+
+  // index number decreases to move down the drinksArray
   } else {
     index--
     displayCocktail(drinksArray, index)
   }
 }
 
+
+// function to push ingredients from the strIngredient in the API response to an array.
 function ingredientsToArray(drinks, index) {
   const ingredients = []
   for (const [key, value] of Object.entries(drinks[index])){
@@ -88,7 +96,7 @@ function ingredientsToArray(drinks, index) {
   ingredientsToDom(ingredients)
 }
 
-
+// function to push items from ingredients array into the DOM.
 function ingredientsToDom(ingredients) {
   document.querySelector('ul').innerText = ''
   for (let i = 0; i < ingredients.length; i++) {
@@ -98,6 +106,7 @@ function ingredientsToDom(ingredients) {
   }
 }
 
+// once you click the enter button the button disappears and the password container appears with focus set onto the password input.
 function enter() {
   document.querySelector('.enter-button').style.display = 'none'
   document.querySelector('.password-container').style.display = 'inline'
@@ -105,12 +114,13 @@ function enter() {
   console.log("password: leon sent me")
 }
 
+// when enter key is pressed and password is correct => removes password containers, scrolls to the top of the screen and shows the bar scene.
 document.addEventListener('keyup', (e) => {
   let password = document.getElementById('password-input').value.toLowerCase();
   let count = 0;
   let pressedKey = String(e.key);
   if (pressedKey === "Enter") {
-    if (password === ' ') {
+    if (password === 'leon sent me') {
       document.querySelector("input").blur()
       window.scrollTo(0, 0)
       document.querySelector('.password-container').style.display = 'none'
@@ -131,7 +141,7 @@ document.addEventListener('keyup', (e) => {
   }, delay)
 })
 
-
+// focus on text input
 function setFocus() {
   let input = document.querySelector("input");
   input.focus();
